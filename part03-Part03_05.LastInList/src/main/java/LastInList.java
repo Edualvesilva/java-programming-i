@@ -8,14 +8,16 @@ public class LastInList {
         Scanner scanner = new Scanner(System.in);
 
         ArrayList<String> list = new ArrayList<>();
+        int size = 0;
         while (true) {
             String input = scanner.nextLine();
             if (input.equals("")) {
+                size = list.size() -1;
                 break;
             }
 
             list.add(input);
         }
-
+        System.out.println(list.get(size));
     }
 }
