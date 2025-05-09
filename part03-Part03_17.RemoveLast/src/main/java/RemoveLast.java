@@ -17,6 +17,7 @@ public class RemoveLast {
         System.out.println(strings);
 
     }
+    
 
     public static void removeLast(ArrayList<String> strings) {
         //for (String word: strings){
