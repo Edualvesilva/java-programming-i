@@ -12,10 +12,9 @@ public class ArrayPrinter {
         int i = 0;
         while (i < array.length) {
             int number = array[i];
-            System.out.print(number + ", ");
-
-            if (i == array.length - 1) {
-                System.out.print(number);
+            System.out.print(number);
+            if (i < array.length - 1) {
+                System.out.print(",");
             }
             i++;
         }
