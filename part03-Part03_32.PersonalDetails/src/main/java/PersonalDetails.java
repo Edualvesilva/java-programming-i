@@ -8,23 +8,35 @@ public class PersonalDetails {
         Scanner scanner = new Scanner(System.in);
 
         double avg = 0;
-        String longName = "";
+        String longestName = "";
+        int longestLength = 0;
+        int sum = 0;
+        int count = 0;
+
         while (true) {
             String input = scanner.nextLine();
-            int length = input.length();
+            String[] parts = input.split(",");
+            int nameLength = parts[0].length();
 
             if (input.equals("")) {
                 break;
             }
 
-            String[] parts = input.split(",");
-            int number = Integer.valueOf(parts[1]);
+            if (nameLength > longestLength) {
+                longestLength = nameLength;
+                longestName = parts[0];
 
-            if (number > length) {
-                longName = parts[0];
             }
 
+            int year = Integer.valueOf(parts[1]);
+
+            sum = sum + year;
+            count++;
+            
+            
         }
-        System.out.println("Longest name: "+longName);
+        avg = (double) sum / count;
+        System.out.println("Longest name: " + longestName);
+        System.out.println("Average of the birth years: "+avg);
     }
 }
