@@ -25,12 +25,41 @@ public class SimpleDate {
             return true;
         }
 
-        if (this.year == compared.year && this.month == compared.month &&
-                 this.day < compared.day) {
+        if (this.year == compared.year && this.month == compared.month
+                && this.day < compared.day) {
             return true;
         }
 
         return false;
     }
 
+    public void advance() {
+        this.day += 1;
+
+        if (this.day > 30) {
+            this.day = 1;
+            this.month++;
+        }
+
+        if (this.month > 12) {
+
+            this.day = 1;
+            this.month = 1;
+            year++;
+        }
+
+    }
+
+    public void advance(int howManyDays){
+        
+        if(howManyDays <= 0){return;}
+        
+        
+       for(int i = 0;i < howManyDays;i++){advance();}
+       
+    
+    
+    }
+    
+    
 }
