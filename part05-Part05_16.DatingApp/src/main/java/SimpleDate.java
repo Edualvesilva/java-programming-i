@@ -50,16 +50,26 @@ public class SimpleDate {
 
     }
 
-    public void advance(int howManyDays){
-        
-        if(howManyDays <= 0){return;}
-        
-        
-       for(int i = 0;i < howManyDays;i++){advance();}
-       
-    
-    
+    public void advance(int howManyDays) {
+
+        if (howManyDays <= 0) {
+            return;
+        }
+
+        for (int i = 0; i < howManyDays; i++) {
+            advance();
+        }
+
     }
-    
-    
+
+    public SimpleDate afterNumberOfDays(int days) {
+        SimpleDate newDate = new SimpleDate(this.day, this.month, this.year);
+
+        for (int i = 0; i < days; i++) {
+            newDate.advance();
+        }
+
+        return newDate;
+    }
+
 }
